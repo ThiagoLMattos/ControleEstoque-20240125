@@ -1,4 +1,4 @@
-package com.exemplo.api_produtos.controller;
+package com.exemplo.controleEstoque.controller;
 
 import java.util.HashSet;
 import java.util.List;
@@ -7,14 +7,13 @@ import java.util.Set;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
-import com.exemplo.api_produtos.model.Fornecedor;
-import com.exemplo.api_produtos.model.Produto;
-import com.exemplo.api_produtos.repository.ProdutoRepository;
+import com.exemplo.controleEstoque.model.Fornecedor;
+import com.exemplo.controleEstoque.model.Produto;
+import com.exemplo.controleEstoque.repository.CategoriaRepository;
+import com.exemplo.controleEstoque.repository.FornecedorRepository;
+import com.exemplo.controleEstoque.repository.ProdutoRepository;
 
 import lombok.RequiredArgsConstructor;
-
-import com.exemplo.api_produtos.repository.CategoriaRepository;
-import com.exemplo.api_produtos.repository.FornecedorRepository;
 
 @RestController
 @RequestMapping("/api/produtos")

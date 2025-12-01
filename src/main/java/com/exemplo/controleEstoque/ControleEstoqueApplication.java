@@ -1,13 +1,13 @@
-package com.exemplo.api_produtos;
+package com.exemplo.controleEstoque;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ApiProdutosApplication {
+public class ControleEstoqueApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ApiProdutosApplication.class, args);
+		SpringApplication.run(ControleEstoqueApplication.class, args);
 	}
 
 }

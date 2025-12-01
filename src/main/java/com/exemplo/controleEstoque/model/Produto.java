@@ -1,4 +1,4 @@
-package com.exemplo.api_produtos.model;
+package com.exemplo.controleEstoque.model;
 
 import java.math.BigDecimal;
 import java.util.Set;
@@ -19,7 +19,7 @@ public class Produto {
     @OneToOne(mappedBy = "produto", cascade = CascadeType.ALL, orphanRemoval = true)
     private Estoque estoque;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "categoria_id", nullable = false)
     private Categoria categoria;
 

@@ -1,13 +1,13 @@
-package com.exemplo.api_produtos.controller;
-
-import com.exemplo.api_produtos.model.Categoria;
-import com.exemplo.api_produtos.repository.CategoriaRepository;
+package com.exemplo.controleEstoque.controller;
 
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import com.exemplo.controleEstoque.model.Categoria;
+import com.exemplo.controleEstoque.repository.CategoriaRepository;
 
 import java.util.List;
 

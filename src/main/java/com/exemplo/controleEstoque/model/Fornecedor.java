@@ -1,8 +1,10 @@
-package com.exemplo.api_produtos.model;
+package com.exemplo.controleEstoque.model;
 
 import jakarta.persistence.*;
 
 import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "tb_fornecedores")
@@ -15,6 +17,7 @@ public class Fornecedor {
     private String nome;
 
     @ManyToMany(mappedBy = "fornecedores")
+    @JsonIgnore 
     private Set<Produto> produtos;
 
     public Fornecedor() {}

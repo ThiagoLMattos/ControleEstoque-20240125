@@ -1,4 +1,6 @@
-package com.exemplo.api_produtos.model;
+package com.exemplo.controleEstoque.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 
@@ -12,8 +14,9 @@ public class Estoque {
 
     private Integer quantidade;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "produto_id", nullable = true)
+    @JsonIgnore 
     private Produto produto;
 
     public Estoque() {}

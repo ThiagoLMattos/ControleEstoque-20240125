@@ -1,8 +1,9 @@
-package com.exemplo.api_produtos.repository;
+package com.exemplo.controleEstoque.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.exemplo.api_produtos.model.Categoria;
+
+import com.exemplo.controleEstoque.model.Categoria;
 
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Long>{

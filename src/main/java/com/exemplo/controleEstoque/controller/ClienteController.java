@@ -1,12 +1,12 @@
-package com.exemplo.api_produtos.controller;
+package com.exemplo.controleEstoque.controller;
 
 import java.util.List;
 
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
-import com.exemplo.api_produtos.model.Cliente;
-import com.exemplo.api_produtos.repository.ClienteRepository;
+import com.exemplo.controleEstoque.model.Cliente;
+import com.exemplo.controleEstoque.repository.ClienteRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -47,7 +47,7 @@ public class ClienteController {
             .orElse(ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCliente(@PathVariable Long id) {
         if(!clienteRepository.existsById(id)) {
             return ResponseEntity.notFound().build();

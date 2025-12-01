@@ -1,12 +1,12 @@
-package com.exemplo.api_produtos.controller;
+package com.exemplo.controleEstoque.controller;
 
 import java.util.List;
 
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
-import com.exemplo.api_produtos.model.Fornecedor;
-import com.exemplo.api_produtos.repository.FornecedorRepository;
+import com.exemplo.controleEstoque.model.Fornecedor;
+import com.exemplo.controleEstoque.repository.FornecedorRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -47,7 +47,7 @@ public class FornecedorController {
             .orElse(ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteFornecedor(@PathVariable Long id) {
         if(!fornecedorRepository.existsById(id)) {
             return ResponseEntity.notFound().build();

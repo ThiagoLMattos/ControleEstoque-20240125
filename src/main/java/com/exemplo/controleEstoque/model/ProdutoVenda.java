@@ -1,6 +1,8 @@
-package com.exemplo.api_produtos.model;
+package com.exemplo.controleEstoque.model;
 
 import java.math.BigDecimal;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 
@@ -14,10 +16,12 @@ public class ProdutoVenda {
 
     @ManyToOne
     @JoinColumn(name = "produto_id", nullable = false)
+    @JsonIgnore 
     private Produto produto;
 
     @ManyToOne
     @JoinColumn(name = "venda_id", nullable = false)
+    @JsonIgnore 
     private Venda venda;
 
     private Integer quantidade;

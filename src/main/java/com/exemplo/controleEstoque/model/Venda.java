@@ -1,8 +1,10 @@
-package com.exemplo.api_produtos.model;
+package com.exemplo.controleEstoque.model;
 
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 
@@ -17,11 +19,12 @@ public class Venda {
 
     private BigDecimal preco;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
 
     @OneToMany(mappedBy = "venda", cascade = CascadeType.ALL)
+    @JsonIgnore 
     private Set<ProdutoVenda> produtosVendidos;
 
     public Venda() {}

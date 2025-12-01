@@ -1,6 +1,8 @@
-package com.exemplo.api_produtos.model;
+package com.exemplo.controleEstoque.model;
 
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 
@@ -16,6 +18,7 @@ public class Cliente {
     private String email;
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+    @JsonIgnore 
     private List<Venda> vendas;
 
     public Cliente(){}
